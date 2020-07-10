@@ -6,7 +6,15 @@ export class TodoList {
   nuevoTodo(todo) {
     this.todos.push(todo);
   }
-  eliminarTodo(id) {}
-  maracarCompletado(id) {}
+  eliminarTodo(id) {
+    this.todos.filter((todo) => todo.id != id);
+  }
+  maracarCompletado(id) {
+    for (const todo of this.todos) {
+      if (todo.id == id) {
+        todo.completado = !todo.completado;
+      }
+    }
+  }
   eliminarCompletados() {}
 }
