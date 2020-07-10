@@ -8,8 +8,7 @@ export const todoList = new TodoList();
 // todoList.nuevoTodo(tarea);
 // console.log(todoList);
 // crearTodoHtml(tarea);
-// Manera 1 de hacerlo 
+// Manera 1 de hacerlo
 todoList.todos.forEach((todo) => crearTodoHtml(todo));
 // Manera dos de hacerlo
 // todoList.todos.forEach(crearTodoHtml);
-
