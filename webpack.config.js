@@ -26,17 +26,17 @@ module.exports = {
           minimize: false,
         },
       },
-      {
-        test: /\.(png|svg|jpg|gif)$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              esModule: false,
-            },
-          },
-        ],
-      },
+      // {
+      //   test: /\.(png|svg|jpg|gif)$/,
+      //   use: [
+      //     {
+      //       loader: "file-loader",
+      //       options: {
+      //         esModule: false,
+      //       },
+      //     },
+      //   ],
+      // },
     ],
   },
   plugins: [
