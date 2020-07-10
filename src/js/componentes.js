@@ -1,5 +1,8 @@
+import { Todo } from "../classes";
+import { todoList } from "../index";
 //Referencias al html
 const divTodoList = document.querySelector(".todo-list");
+const txtinput = document.querySelector(".new-todo");
 export const crearTodoHtml = (todo) => {
   const htmlTodo = `
   <li class="${todo.completado ? "completed" : ""}" data-id="${todo.id}">
@@ -15,3 +18,12 @@ export const crearTodoHtml = (todo) => {
   divTodoList.append(div.firstElementChild);
   return div;
 };
+// Eventos
+txtinput.addEventListener("keyup", (evento) => {
+  if (evento.keyCode === 13 && txtinput.value.length > 0) {
+    const nuevoTodo = new Todo(txtinput.value);
+    todoList.nuevoTodo(nuevoTodo);
+    crearTodoHtml(nuevoTodo);
+    txtinput.value = "";
+  }
+});
