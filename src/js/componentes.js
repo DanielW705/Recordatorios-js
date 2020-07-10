@@ -3,6 +3,7 @@ import { todoList } from "../index";
 //Referencias al html
 const divTodoList = document.querySelector(".todo-list");
 const txtinput = document.querySelector(".new-todo");
+const btnBorrar = document.querySelector(".clear-completed");
 export const crearTodoHtml = (todo) => {
   const htmlTodo = `
   <li class="${todo.completado ? "completed" : ""}" data-id="${todo.id}">
@@ -33,6 +34,18 @@ divTodoList.addEventListener("click", (event) => {
   const todoId = todoElemento.getAttribute("data-id");
   if (nombreElemento.includes("input")) {
     todoList.maracarCompletado(todoId);
-    todoElemento.classList.toggle('completed');
+    todoElemento.classList.toggle("completed");
+  } else if (nombreElemento.includes("button")) {
+    todoList.eliminarTodo(todoId);
+    divTodoList.removeChild(todoElemento);
+  }
+});
+btnBorrar.addEventListener("click", () => {
+  todoList.eliminarCompletados();
+  for (let i = divTodoList.children.length - 1; i >= 0; i--) {
+    const elemento = divTodoList.children[i];
+    if (elemento.classList.contains("completed")) {
+      divTodoList.removeChild(elemento);
+    }
   }
 });
