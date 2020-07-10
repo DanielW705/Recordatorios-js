@@ -1,9 +1,9 @@
 # Webpack Starter
-Este es el proyecto inicial para crear utilizando aplicaciones con web pack
+Este es mi primera aplicacion que utiliza y ejecuta web pack y tiene todo lo aprendido de javascript o ECMAscript 6
 ### Notas:
 Recuerden reconstruir los modulos de Node
 ```
-install mp
+install npm
 ```
 y para construir el buil recuerden: 
 ```
